@@ -19,4 +19,4 @@
 ## Etap 2 - pobranie skłądowych pojednyczej opinii
 - pobranie kody jendej storny z opiniami o konkretnym produkcie
 - wyciągnięcie kodu strony fragmentów odpowiadających poszczególnym opiniom
--zapisanie do pojednycznych zmiennych wartości poszczególnych składowych opinii
+- zapisanie do pojednycznych zmiennych wartości poszczególnych składowych opinii
