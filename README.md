@@ -30,3 +30,10 @@
 - transformacja i wyczyszczenie danych
 - refaktoring okdu
 - parametryzacja kodu (robienie uniwersalnego kodu)
+
+## Etap 5 (Pandas, Matpoltlib)
+- wczytanie opinii do ramki danych
+- policzenie podstawowych statystyk
+- narysowanie wykresów funkcji 
+
+## Etap 6 interfejs webowy dla scrapera (Flask)
