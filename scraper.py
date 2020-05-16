@@ -14,6 +14,8 @@ def extract_feature(opinion,selector,attribute=None):
             return opinion.select(selector).pop().text.strip()
     except IndexError:
         return None
+
+
 #słownik z atrybutami i ich selectorami
 selectors = {
     "author":["div.reviewer-name-line"],
@@ -45,6 +47,7 @@ all_opinions = []
 while url:
     # dla wszyskich opinii z danej strony wydobaycie ich składowych 
     respons = requests.get(url)
+   # respons.status_code == 200
     page_dom = BeautifulSoup(respons.text, "html.parser")
 
     # wydobycie z kodu strony fragmentów odpowiadających opiniom konsumentów
@@ -76,7 +79,7 @@ while url:
     print(url)
 
 with open("opinions_json/"+product_id+".json", "w", encoding="UTF-8") as fp:
-    json.dump(all_opinions, fp, indent=4, separators=[":",","], ensure_ascii=False)
+    json.dump(all_opinions, fp, indent=4, ensure_ascii=False)
 
 
 # pprint.pprint(all_opinions)
