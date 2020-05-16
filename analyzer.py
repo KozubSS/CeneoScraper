@@ -23,7 +23,7 @@ cons = opinions.cons.count()
 stars = opinions.stars.value_counts().sort_index()
 recommendation = opinions.recommendation.value_counts()
 
-print(f'Średnia ocena: {average_score}\nLiczba opinii z zaletami: {pros}\nLiczba opinii z wadami: {cons}\n{stars}')
+print(f'Średnia ocena: {average_score}\nLiczba opinii z zaletami: {pros}\nLiczba opinii z wadami: {cons}')
 fig, ax = plt.subplots()
 stars.plot.bar(color = "#f5c2c2")
 plt.title("Ranking ocen")
