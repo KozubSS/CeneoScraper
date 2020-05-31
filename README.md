@@ -1,20 +1,20 @@
 # CeneoScraper
 ## Etap 1 pracy - analiza struktury opinii w serwisie [Ceneo.pl](https://www.ceneo.pl/)
 
-| Składowa                | Selektor                                         | Nazwa zmiennej |
-|-------------------------|--------------------------------------------------|----------------|
-| opinia                  |li.js_proctud-review                              | opinion        |
-| identyfikator opinii    |["data-entry-id"]                                 | opinion_id     |
-| autor                   |div.reviewer-name-line                            | author         |
-| rekomendacja            |div.product-review-summary > em                   | recommendation |
-| ocena                   |span.review-score-count                           | stars          |
-| treść opini             |p.product-review-body                             | content        |
-| lista wad               |div.cons-cell > ul                                | cons           |
-| lista zalet             |div.pros-cell > ul                                | pros           |
-| przydatna               |button.vote-yes > span                            | useful         |
-| nieprzydatna            |button.vote-no > span                             | useles         |
-| data wystawienia opinii |span.review-time > time:first-child["datatime"]   | opinion_date   |
-| data zakupu             |span.review-time > time:nth-child(2)["datatime"]  | urchase_date   |
+| Składowa                | Selektor                                                  | Nazwa zmiennej |
+|-------------------------|-----------------------------------------------------------|----------------|
+| opinia                  |div.js_proctud-review                                      | opinion        |
+| identyfikator opinii    |["data-entry-id"]                                          | opinion_id     |
+| autor                   |span.user-post__author-name                                | author         |
+| rekomendacja            |span.user-post_author-recomendation> em                    | recommendation |
+| ocena                   |span.review-score-count                                    | stars          |
+| treść opini             |div.user-post__text                                        | content        |
+| lista wad               |div.review-feature__col:has(>div.review-feature__title-negatives                                                       | cons           |
+| lista zalet             |div.review-feature__col:has(>div.review-feature__title-positives                                                       | pros           |
+| przydatna               |button.vote-yes > span                                     | useful         |
+| nieprzydatna            |button.vote-no > span                                      | useles         |
+| data wystawienia opinii |span.user-post__published > time:first-child["datatime"]   | opinion_date   |
+| data zakupu             |span.user-post__published > time:nth-child(2)["datatime"]  | urchase_date   |
 
 ## Etap 2 - pobranie skłądowych pojednyczej opinii
 - pobranie kody jendej storny z opiniami o konkretnym produkcie
@@ -37,3 +37,19 @@
 - narysowanie wykresów funkcji 
 
 ## Etap 6 interfejs webowy dla scrapera (Flask)
+> /Scrapper  
+>>        /run.py  
+>>        /config.py  
+>>        /app  
+>>>            /__init__.py
+>>>            /views.py  
+>>>            /models.py  #pod jakim adersem jaka akcja bedzie wykonywana
+>>>            /static/   #elementy wyświetlane na stronie
+>>>>                /figures_png
+>>>>                /main.css
+>>>            /templates/   # 
+>>>>                /layout.html  
+>>>>                /extract.html
+>>>             /opinions_json
+>>>        /requirements.txt  
+>>>        /yourappenv
