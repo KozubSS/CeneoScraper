@@ -44,7 +44,7 @@ url = url_prefix+"/"+product_id+url_postfix
 
 # pusta lista 
 all_opinions = []
-#dla pojedynczej opinii wydobycia jej składowych
+# dla pojedynczej opinii wydobycia jej składowych
 # tutaj było bez pętli i nie potrezba już opinions.pop(0)
 while url:
     # dla wszyskich opinii z danej strony wydobaycie ich składowych 
